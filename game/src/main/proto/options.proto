@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package rsmod;
+import "google/protobuf/descriptor.proto";
+
+option java_package = "gg.rsmod.proto";
+option java_multiple_files = true;
+
+enum DataType {
+    Byte = 0;
+    Short = 1;
+    Int = 2;
+    Long = 3;
+    String = 4;
+    Bytes = 5;
+}
+
+enum DataOrder {
+    Big = 0;
+    Little = 1;
+}
+
+enum DataTransformation {
+    Add = 0;
+    Subtract = 1;
+    Negate = 2;
+    Middle = 3;
+}
+
+enum PacketSize {
+    Fixed = 0;
+    VariableByte = 1;
+    VariableShort = 2;
+}
+
+message PacketHeader {
+    int32 opcode = 1;
+    PacketSize type = 2;
+}
+
+extend google.protobuf.MessageOptions {
+    PacketHeader header = 50001;
+}
+
+extend google.protobuf.FieldOptions {
+    DataType type = 50001;
+    DataOrder order = 50002;
+    DataTransformation trans = 50003;
+}

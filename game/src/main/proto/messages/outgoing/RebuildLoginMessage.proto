@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message RebuildLoginMessage {
+    option (rsmod.header).opcode = 0;
+    option (rsmod.header).type = VariableShort;
+
+    bytes gpi   = 1 [(rsmod.type) = Bytes];
+    int32 z     = 2 [(rsmod.type) = Short, (rsmod.trans) = Add, (rsmod.order) = Little];
+    int32 x     = 3 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    bytes xteas = 4 [(rsmod.type) = Bytes];
+}

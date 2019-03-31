@@ -2,6 +2,7 @@
 /.gradle/
 build/
 out/
+gen/
 
 gradlew
 gradlew.bat

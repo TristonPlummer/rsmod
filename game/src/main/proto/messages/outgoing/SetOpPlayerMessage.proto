@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message SetOpPlayerMessage {
+    option (rsmod.header).opcode = 66;
+    option (rsmod.header).type = VariableByte;
+
+    int32 priority  = 1 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 index     = 2 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    string option   = 3 [(rsmod.type) = String];
+}

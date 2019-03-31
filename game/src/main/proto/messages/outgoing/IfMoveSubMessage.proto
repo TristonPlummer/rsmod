@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message IfMoveSubMessage {
+    option (rsmod.header).opcode = 82;
+    option (rsmod.header).type = Fixed;
+
+    int32 to    = 1 [(rsmod.type) = Int];
+    int32 from  = 2 [(rsmod.type) = Int];
+}
