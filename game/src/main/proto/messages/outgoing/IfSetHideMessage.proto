@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message IfSetHideMessage {
+    option (rsmod.header).opcode = 21;
+    option (rsmod.header).type = Fixed;
+
+    int32 hash  = 1 [(rsmod.type) = Int];
+    bool hidden = 2 [(rsmod.type) = Byte];
+}

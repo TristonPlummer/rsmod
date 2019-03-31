@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message MessageGameMessage {
+    option (rsmod.header).opcode = 3;
+    option (rsmod.header).type = VariableByte;
+
+    int32 type          = 1 [(rsmod.type) = Byte];
+    int32 check_ignore  = 2 [(rsmod.type) = Byte];
+    string username     = 3 [(rsmod.type) = String];
+    string message      = 4 [(rsmod.type) = String];
+}

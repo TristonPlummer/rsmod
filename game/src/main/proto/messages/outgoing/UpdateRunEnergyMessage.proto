@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message UpdateRunEnergyMessage {
+    option (rsmod.header).opcode = 60;
+    option (rsmod.header).type = Fixed;
+
+    int32 energy = 1 [(rsmod.type) = Byte];
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message LocAddChangeMessage {
+    option (rsmod.header).opcode = 6;
+    option (rsmod.header).type = Fixed;
+
+    int32 tile      = 1 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 settings  = 2 [(rsmod.type) = Byte, (rsmod.trans) = Subtract];
+    int32 id        = 3 [(rsmod.type) = Short, (rsmod.trans) = Add];
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message MapProjAnimMessage {
+    option (rsmod.header).opcode = 11;
+    option (rsmod.header).type = Fixed;
+
+    int32 end_height    = 1 [(rsmod.type) = Byte, (rsmod.trans) = Subtract];
+    int32 lifespan      = 2 [(rsmod.type) = Short];
+    int32 gfx           = 3 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 start_height  = 4 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 target_index  = 5 [(rsmod.type) = Short, (rsmod.order) = Little];
+    int32 angle         = 6 [(rsmod.type) = Byte];
+    int32 steepness     = 7 [(rsmod.type) = Byte, (rsmod.trans) = Subtract];
+    int32 delay         = 8 [(rsmod.type) = Short, (rsmod.order) = Little];
+    int32 tile          = 9 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 offset_z      = 10[(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 offset_x      = 11[(rsmod.type) = Byte, (rsmod.trans) = Negate];
+}

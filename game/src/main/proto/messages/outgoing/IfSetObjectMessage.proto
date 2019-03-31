@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message IfSetObjectMessage {
+    option (rsmod.header).opcode = 20;
+    option (rsmod.header).type = Fixed;
+
+    int32 hash      = 1 [(rsmod.type) = Int];
+    int32 item      = 2 [(rsmod.type) = Short];
+    int32 amount    = 3 [(rsmod.type) = Int, (rsmod.order) = InverseMiddle];
+}

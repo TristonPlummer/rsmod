@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message UpdateRunWeightMessage {
+    option (rsmod.header).opcode = 71;
+    option (rsmod.header).type = Fixed;
+
+    int32 weight = 1 [(rsmod.type) = Short];
+}

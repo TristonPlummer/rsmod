@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message VarpSmallMessage {
+    option (rsmod.header).opcode = 63;
+    option (rsmod.header).type = Fixed;
+
+    int32 value = 1 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+    int32 id    = 2 [(rsmod.type) = Short, (rsmod.trans) = Add];
+}

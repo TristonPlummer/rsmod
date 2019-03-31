@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message IfOpenTopMessage {
+    option (rsmod.header).opcode = 84;
+    option (rsmod.header).type = Fixed;
+
+    int32 top = 1 [(rsmod.type) = Short, (rsmod.trans) = Add, (rsmod.order) = Little];
+}

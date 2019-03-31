@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message UpdateInvFullMessage {
+    option (rsmod.header).opcode = 70;
+    option (rsmod.header).type = VariableShort;
+
+    int32 component_hash    = 1 [(rsmod.type) = Int];
+    int32 container_key     = 2 [(rsmod.type) = Short];
+    int32 item_count        = 3 [(rsmod.type) = Short];
+    bytes items             = 4 [(rsmod.type) = Bytes];
+}

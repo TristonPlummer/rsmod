@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message UpdateStatMessage {
+    option (rsmod.header).opcode = 22;
+    option (rsmod.header).type = Fixed;
+
+    int32 xp    = 1 [(rsmod.type) = Int, (rsmod.order) = Little];
+    int32 skill = 2 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+    int32 level = 3 [(rsmod.type) = Byte];
+}

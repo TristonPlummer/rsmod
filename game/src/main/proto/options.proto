@@ -18,13 +18,14 @@ enum DataType {
 enum DataOrder {
     Big = 0;
     Little = 1;
+    Middle = 2;
+    InverseMiddle = 3;
 }
 
 enum DataTransformation {
     Add = 0;
     Subtract = 1;
     Negate = 2;
-    Middle = 3;
 }
 
 enum PacketSize {

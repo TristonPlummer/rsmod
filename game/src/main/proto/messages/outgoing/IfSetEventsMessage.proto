@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message IfSetEventsMessage {
+    option (rsmod.header).opcode = 48;
+    option (rsmod.header).type = Fixed;
+
+    int32 setting   = 1 [(rsmod.type) = Int, (rsmod.order) = Little];
+    int32 to        = 2 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 hash      = 3 [(rsmod.type) = Int, (rsmod.order) = InverseMiddle];
+    int32 from      = 4 [(rsmod.type) = Short];
+}

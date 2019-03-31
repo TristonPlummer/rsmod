@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message SynthSoundMessage {
+    option (rsmod.header).opcode = 65;
+    option (rsmod.header).type = Fixed;
+
+    int32 sound     = 1 [(rsmod.type) = Short];
+    int32 volume    = 2 [(rsmod.type) = Byte];
+    int32 delay     = 3 [(rsmod.type) = Short];
+}

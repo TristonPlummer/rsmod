@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.outgoing";
+option java_multiple_files = true;
+
+message LogoutFullMessage {
+    option (rsmod.header).opcode = 1;
+    option (rsmod.header).type = Fixed;
+}
