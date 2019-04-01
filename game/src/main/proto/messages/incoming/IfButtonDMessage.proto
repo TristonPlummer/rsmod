@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message IfButtonDMessage {
+    option (rsmod.header).opcode = 57;
+    option (rsmod.header).type = Fixed;
+
+    int32 src_slot              = 1 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 dst_item              = 2 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 dst_slot              = 3 [(rsmod.type) = Short];
+    int32 src_component_hash    = 4 [(rsmod.type) = Int, (rsmod.order) = Little];
+    int32 dst_component_hash    = 5 [(rsmod.type) = Int, (rsmod.order) = Middle];
+    int32 src_item              = 6 [(rsmod.type) = Short];
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message ClanJoinChatLeaveChatMessage {
+    option (rsmod.header).opcode = 39;
+    option (rsmod.header).type = Fixed;
+
+    int32 pitch = 1 [(rsmod.type) = Short, (rsmod.trans) = Add, (rsmod.order) = Little];
+    int32 yaw   = 2 [(rsmod.type) = Short, (rsmod.order) = Little];
+}

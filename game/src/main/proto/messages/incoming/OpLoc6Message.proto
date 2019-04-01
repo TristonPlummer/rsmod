@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message OpLoc6Message {
+    option (rsmod.header).opcode = 36;
+    option (rsmod.header).type = Fixed;
+
+    int32 id = 1 [(rsmod.type) = Short, (rsmod.trans) = Add];
+}

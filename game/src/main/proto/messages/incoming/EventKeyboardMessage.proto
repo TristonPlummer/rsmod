@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message EventKeyboardMessage {
+    option (rsmod.header).opcode = 67;
+    option (rsmod.header).type = VariableShort;
+
+    int32 key               = 1 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+    int32 last_key_press    = 2 [(rsmod.type) = TriByte];
+}

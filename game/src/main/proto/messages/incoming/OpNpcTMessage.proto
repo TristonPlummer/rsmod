@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message OpNpcTMessage {
+    option (rsmod.header).opcode = 86;
+    option (rsmod.header).type = Fixed;
+
+    int32 npc_index         = 1 [(rsmod.type) = Short, (rsmod.trans) = Add, (rsmod.order) = Little];
+    int32 movement_type     = 2 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+    int32 component_hash    = 3 [(rsmod.type) = Int, (rsmod.order) = Little];
+    int32 component_slot    = 4 [(rsmod.type) = Short, (rsmod.trans) = Add];
+}

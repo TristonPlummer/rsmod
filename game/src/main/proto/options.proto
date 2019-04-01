@@ -9,10 +9,11 @@ option java_multiple_files = true;
 enum DataType {
     Byte = 0;
     Short = 1;
-    Int = 2;
-    Long = 3;
-    String = 4;
-    Bytes = 5;
+    TriByte = 2;
+    Int = 3;
+    Long = 4;
+    String = 5;
+    Bytes = 6;
 }
 
 enum DataOrder {

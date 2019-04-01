@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message TeleportMessage {
+    option (rsmod.header).opcode = 61;
+    option (rsmod.header).type = Fixed;
+
+    int32 unknown   = 1 [(rsmod.type) = Int, (rsmod.order) = Middle];
+    int32 z         = 2 [(rsmod.type) = Short, (rsmod.order) = Little];
+    int32 height    = 3 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+    int32 x         = 4 [(rsmod.type) = Short];
+}

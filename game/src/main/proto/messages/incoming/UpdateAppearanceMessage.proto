@@ -1,0 +1,24 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message UpdateAppearanceMessage {
+    option (rsmod.header).opcode = 12;
+    option (rsmod.header).type = Fixed;
+
+    int32 gender        = 1 [(rsmod.type) = Byte];
+    int32 appearance0   = 2 [(rsmod.type) = Byte];
+    int32 appearance1   = 3 [(rsmod.type) = Byte];
+    int32 appearance2   = 4 [(rsmod.type) = Byte];
+    int32 appearance3   = 5 [(rsmod.type) = Byte];
+    int32 appearance4   = 6 [(rsmod.type) = Byte];
+    int32 appearance5   = 7 [(rsmod.type) = Byte];
+    int32 appearance6   = 8 [(rsmod.type) = Byte];
+    int32 color0        = 9 [(rsmod.type) = Byte];
+    int32 color1        = 10[(rsmod.type) = Byte];
+    int32 color2        = 11[(rsmod.type) = Byte];
+    int32 color3        = 12[(rsmod.type) = Byte];
+    int32 color4        = 13[(rsmod.type) = Byte];
+}

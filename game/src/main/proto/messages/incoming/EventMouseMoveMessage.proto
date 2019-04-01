@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+// TODO: need to refactor code to see what values are received
+message EventMouseMoveMessage {
+    option (rsmod.header).opcode = 34;
+    option (rsmod.header).type = VariableByte;
+}

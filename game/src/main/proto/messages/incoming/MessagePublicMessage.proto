@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message MessagePublicMessage {
+    option (rsmod.header).opcode = 97;
+    option (rsmod.header).type = VariableByte;
+
+    int32 type      = 1 [(rsmod.type) = Byte];
+    int32 color     = 2 [(rsmod.type) = Byte];
+    int32 effect    = 3 [(rsmod.type) = Byte];
+    string message  = 4 [(rsmod.type) = String];
+}

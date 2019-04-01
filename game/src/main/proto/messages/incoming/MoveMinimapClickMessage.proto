@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message MoveMinimapClickMessage {
+    option (rsmod.header).opcode = 52;
+    option (rsmod.header).type = VariableByte;
+
+    int32 z             = 1 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 x             = 2 [(rsmod.type) = Short, (rsmod.trans) = Add];
+    int32 movement_type = 3 [(rsmod.type) = Byte, (rsmod.trans) = Add];
+}

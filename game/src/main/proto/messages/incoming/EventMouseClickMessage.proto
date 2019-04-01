@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message EventMouseClickMessage {
+    option (rsmod.header).opcode = 41;
+    option (rsmod.header).type = Fixed;
+
+    int32 first     = 1 [(rsmod.type) = Short];
+    int32 second    = 2 [(rsmod.type) = Short];
+    int32 third     = 3 [(rsmod.type) = Short];
+}

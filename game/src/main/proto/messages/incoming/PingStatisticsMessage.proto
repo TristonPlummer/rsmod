@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message PingStatisticsMessage {
+    option (rsmod.header).opcode = 11;
+    option (rsmod.header).type = Fixed;
+
+    int32 first     = 1 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+    int32 second    = 2 [(rsmod.type) = Byte];
+    int32 third     = 3 [(rsmod.type) = Int, (rsmod.order) = Middle];
+    int32 fourth    = 4 [(rsmod.type) = Int];
+}

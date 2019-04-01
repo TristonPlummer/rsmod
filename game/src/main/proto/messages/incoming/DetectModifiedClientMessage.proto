@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message DetectModifiedClientMessage {
+    option (rsmod.header).opcode = 9;
+    option (rsmod.header).type = Fixed;
+
+    int32 dummy = 1 [(rsmod.type) = Int];
+}

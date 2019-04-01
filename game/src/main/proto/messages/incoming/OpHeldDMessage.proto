@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "options.proto";
+
+option java_package = "gg.rsmod.proto.messages.incoming";
+option java_multiple_files = true;
+
+message OpHeldDMessage {
+    option (rsmod.header).opcode = 80;
+    option (rsmod.header).type = Fixed;
+
+    int32 src_slot          = 1 [(rsmod.type) = Short];
+    int32 dst_slot          = 2 [(rsmod.type) = Short, (rsmod.order) = Little];
+    int32 component_hash    = 3 [(rsmod.type) = Int];
+    int32 insert_mode       = 4 [(rsmod.type) = Byte, (rsmod.trans) = Negate];
+}
